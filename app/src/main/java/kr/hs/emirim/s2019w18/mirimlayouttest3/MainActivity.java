@@ -2,6 +2,7 @@ package kr.hs.emirim.s2019w18.mirimlayouttest3;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.net.sip.SipSession;
 import android.os.Bundle;
@@ -10,6 +11,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 //        setContentView(R.layout.activity_main);
 
-        LinearLayout linear1=new LinearLayout(this);
+        final LinearLayout linear1=new LinearLayout(this);
         LinearLayout.LayoutParams params =new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
                 LinearLayout.LayoutParams.MATCH_PARENT);
 
@@ -53,9 +55,10 @@ public class MainActivity extends AppCompatActivity {
 
         Button btn = new Button(this);
         btn.setText("버튼입니다");
+        btn.setTextColor(Color.BLUE);
         btn.setBackgroundColor(Color.YELLOW);
         linear1.addView(btn);
-        
+
 //        다음 시간에 알려주신다고 하셨음
 //        LinearLayout.LayoutParams textParams=(LinearLayout.LayoutParams) textView.getLayoutParams();
         textView = new TextView(this);
@@ -71,5 +74,20 @@ public class MainActivity extends AppCompatActivity {
                 textView.setText(editText.getText().toString()+"이(가) 입력되었습니다.");
             }
         });
+
+        Button btnNextActivity = new Button(this);
+        btnNextActivity.setText("relative xml로 넘어가기!");
+        btnNextActivity.setTextColor(Color.BLUE);
+        btnNextActivity.setBackgroundColor(Color.YELLOW);
+        linear1.addView(btnNextActivity);
+
+        btnNextActivity.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Intent intent = new Intent(linear1, RelativeActivity.class);
+//                startActivity(intent);
+            }
+        });
+
     }
 }
