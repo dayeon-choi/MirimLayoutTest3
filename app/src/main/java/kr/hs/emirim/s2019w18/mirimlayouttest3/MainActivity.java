@@ -55,7 +55,8 @@ public class MainActivity extends AppCompatActivity {
         btn.setText("버튼입니다");
         btn.setBackgroundColor(Color.YELLOW);
         linear1.addView(btn);
-
+        
+//        다음 시간에 알려주신다고 하셨음
 //        LinearLayout.LayoutParams textParams=(LinearLayout.LayoutParams) textView.getLayoutParams();
         textView = new TextView(this);
 //        textParams.topMargin=20;
